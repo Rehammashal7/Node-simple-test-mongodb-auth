@@ -12,8 +12,12 @@ const cors = require("cors");
 const bcrypt = require("bcryptjs");
 
 const userRoute = require("./routes/user");
+const authRoute = require("./routes/auth");
+
 app.use(express.json());
-app.use("/api/users", userRoute);
+
+app.use("/api/user", userRoute);
+app.use("/api/auth", authRoute);
 
 const port = process.env.PORT || 5000;
 const bodyParser = require("body-parser");
@@ -26,7 +30,7 @@ app.listen(port, () =>
 
 // https://mongoosejs.com/docs/
 const mongoose = require("mongoose");
-const User = require("./models/user");
+const User = require("./models/User");
 
 main()
   .then(() => console.log("mongodb is connected"))
