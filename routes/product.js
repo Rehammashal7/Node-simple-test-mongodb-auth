@@ -1,9 +1,4 @@
-const Product = require("../models/Product");
-const {
-  verifyToken,
-  verifyTokenAndAuthorization,
-  verifyTokenAndAdmin,
-} = require("./verifyToken");
+const app = require("..");
 
 const router = require("express").Router();
 
