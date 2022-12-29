@@ -12,6 +12,8 @@ const bodyParser = require("body-parser");
 const userRoute = require("./routes/user");
 const authRoute = require("./routes/auth");
 const productRoute = require("./routes/product");
+const cartRoute = require("./routes/cart");
+const orderRoute = require("./routes/order");
 app.use(cors());
 app.use(bodyParser.json());
 
@@ -22,6 +24,10 @@ app.use(express.json());
 app.use("/api/auth", authRoute);
 app.use("/api/users", userRoute);
 app.use("/api/products", productRoute);
+app.use("/api/orders", orderRoute);
+app.use("/api/carts", cartRoute);
+
+console.log(orderRoute)
 // https://mongoosejs.com/docs/
 const mongoose = require("mongoose");
 
