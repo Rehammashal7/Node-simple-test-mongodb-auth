@@ -38,7 +38,11 @@ main()
 async function main() {
   await mongoose.connect(process.env.MONGO_URL);
 }
+app.get('/', (req, res) => {
+  return res.status(200).send("OK");
+  });
 module.exports = app;
+
 
 // app.post('/login', (req, res) => {
 //   const { email, password } = req.body;
@@ -124,6 +128,4 @@ module.exports = app;
 //   return existing_user;
 // }
 
-// app.get('/', (req, res) => {
-//   return res.status(200).send("OK");
-// });
+
